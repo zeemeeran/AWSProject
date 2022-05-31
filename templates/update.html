@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Student Master</title>
+{% endblock %}
+
+{% block body %}
+
+<div class="content">
+    <br><br>
+    <div class="container-fluid" style="width: 600px;">
+    
+        <p class="h5">Update Student details</p>
+        <br>
+    <form action="/update/{{student.student_id}}" method="POST" enctype="multipart/form-data" onsubmit="return test()">
+        <div class="row mb-3">
+          <label for="name" class="col-sm-2 col-form-label">Name</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="name" name="name" value="{{student.student_name}}">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="course" class="col-sm-2 col-form-label">Course</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="course" name="course" value="{{student.student_course}}">
+          </div>
+        </div>
+        <div class="row mb-3">
+            <label for="phone" class="col-sm-2 col-form-label">Phone</label>
+            <div class="col-sm-5">
+              <input type="text" class="form-control" id="phone" name="phone" value="{{student.student_phone}}">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="picture" class="col-sm-2 col-form-label">Picture</label>
+            <div class="col-sm-5">
+              <input type="text" class="form-control" id="picture" name="picture" value="{{student.student_picture}}" readonly>
+              <br>
+              <input type = "file" name = "file" id="uploadFile"/>
+              </div>
+          </div>
+          
+         <button type="submit" class="btn btn-primary">Save</button>
+      </form>
+      <br><br>
+      </div>
+      <br>
+      
+</div>
+
+
+{% endblock %}
