@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  <title>Student Details</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    {% if students|length < 1 %}
+        <h4 style="text-align: center">There are no Students in the database. Please click on add student tab to add students!</h4>
+    {% else %}
+    <br>
+    <table class="table table-striped table-bordered" style="width:100%">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Phone</th>
+            <th>Picture</th>
+            <th>Actions</th>
+        </tr>
+        {% for student in students %}
+            <tr>
+                <td width="8%">{{ student.student_id }}</td>
+                <td width="20%" class="td-left">{{ student.student_name }}</td>
+                <td width="15%">{{ student.student_course }}</td>
+                <td width="17%" class="td-left">{{ student.student_phone }}</td>
+                <td width="19%" class="td-left">{{ student.student_picture }}</td>
+                <td width="21%">
+                    <a href="/delete/{{student.student_id}}">Delete</a>
+                    &nbsp;
+                    <a href="/update/{{student.student_id}}">Update</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    <!--
+    <table>
+        <tr>
+            <div class="form">
+                <form action="/" method="POST">
+                    <label for="name">Student name: </label> <input type="text" id="name" name="name"><br><br>
+                    <label for="course">Student course: </label> <input type="text" id="course" name="course"><br><br>
+                    <label for="phone">Student Phone: </label> <input type="text" id="phone" name="phone"><br><br>
+                    <label for="picture">Student Picture: </label> <input type="text" id="picture" name="picture"><br><br>
+                    <button><a>Save</a></button>
+                    <br>
+                </form>
+            </div>
+        </tr>
+    </table>
+
+    <br><br>
+    <div class="container" style="width: 100px;"></div>
+    <div class="jumbotron">
+    <form action="/" method="POST">
+        <div class="row mb-3">
+          <label for="name" class="col-sm-2 col-form-label">Name</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="name" name="name">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="course" class="col-sm-2 col-form-label">Course</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="course" name="course">
+          </div>
+        </div>
+        <div class="row mb-3">
+            <label for="phone" class="col-sm-2 col-form-label">Phone</label>
+            <div class="col-sm-5">
+              <input type="text" class="form-control" id="phone" name="phone">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="picture" class="col-sm-2 col-form-label">Picture</label>
+            <div class="col-sm-5">
+              <input type="text" class="form-control" id="picture" name="picture">
+            </div>
+          </div>
+         <button type="submit" class="btn btn-primary">Save</button>
+      </form>
+      </div>
+    -->
+</div>
+{% endblock %}
