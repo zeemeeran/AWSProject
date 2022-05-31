@@ -7,7 +7,12 @@
 {% block body %}
 <div class="content">
     {% if students|length < 1 %}
-        <h4 style="text-align: center">There are no Students in the database. Please click on add student tab to add students!</h4>
+
+    <br><br>
+    <div class="alert alert-primary" role="alert">
+      There are no Students in the database. Please click on "Add Student" tab to add students!
+    </div>
+    
     {% else %}
     <br>
     <table class="table table-striped table-bordered" style="width:100%">
