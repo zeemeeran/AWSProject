@@ -103,10 +103,9 @@ def update(student_id):
                     print(f'{filepath} deleted successfully')
                 else:
                     print("The file does not exist") 
+            student.student_picture = filename
 
-
-        student.student_picture = filename
-       
+     
         student = Student(student.student_name, student.student_course, student.student_phone, student.student_picture)
 
         try:
