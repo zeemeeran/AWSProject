@@ -104,7 +104,6 @@ def update(student_id):
                 else:
                     print("The file does not exist") 
             student.student_picture = filename
-
      
         student = Student(student.student_name, student.student_course, student.student_phone, student.student_picture)
 
