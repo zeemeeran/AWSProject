@@ -17,7 +17,7 @@ import os
 
 
 def upload(fname):
-    s3_client = boto3.client('s3', aws_access_key_id = '********', aws_secret_access_key='**********')
+    s3_client = boto3.client('s3')
     path = 'static/files/' + fname
     try:
         response = s3_client.upload_file(path, 'student-pictures', fname)
